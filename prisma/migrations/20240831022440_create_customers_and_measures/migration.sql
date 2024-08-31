@@ -8,11 +8,11 @@ CREATE TABLE "customers" (
 -- CreateTable
 CREATE TABLE "measures" (
     "measure_uuid" TEXT NOT NULL,
-    "measure_datetime" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "measure_datetime" TEXT NOT NULL,
     "measure_type" TEXT NOT NULL,
     "has_confirmed" BOOLEAN NOT NULL DEFAULT false,
     "image_url" TEXT NOT NULL,
-    "measure_value" INTEGER NOT NULL,
+    "measure_value" INTEGER,
     "customer_id" TEXT NOT NULL,
 
     CONSTRAINT "measures_pkey" PRIMARY KEY ("measure_uuid")
