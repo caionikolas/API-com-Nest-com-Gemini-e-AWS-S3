@@ -24,7 +24,8 @@ obter a medição através da foto de um medidor
     ```
 2. Instale os pacotes utilizando o comando `npm install`
 3. Crie um arquivo `.env` na raiz do projeto e insira suas credencias. Utilize o arquivo `.env.example` como base.
-4. Execute o projeto com o comando `npm start`
+4. Execute o comando `npm rum prisma`
+5. Execute o projeto com o comando `npm start`
 
 ## API Endpoints
 A API fornece os seguintes endpoints:
