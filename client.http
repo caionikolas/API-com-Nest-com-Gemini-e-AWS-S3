@@ -1,7 +1,4 @@
 ###
-GET  http://localhost:3333/teste
-
-###
 POST http://localhost:3333/upload
 Content-Type: application/json 
 
@@ -17,12 +14,9 @@ PATCH http://localhost:3333/confirm
 Content-Type: application/json
 
 {
-  "measureUuid": "dafa138d-d98f-4079-aa4d-9ad01d826bc2",
-  "confirmValue": 3153485
+  "measureUuid": "5d9a267a-1757-4748-b419-0ae57fb06377",
+  "confirmValue": 56993
 }
 
 ###
-GET http://localhost:3333/456/list?measure_type=GAs
-
-###
-GET http://localhost:3333/teste
+GET http://localhost:3333/456/list?measure_type=GAS

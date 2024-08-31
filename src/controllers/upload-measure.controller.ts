@@ -46,7 +46,7 @@ export class UploadMeasure {
     const { image, customerId, measureDatetime, measureType } =
       uploadMeasureSchema.parse(body)
 
-    // upload image
+    // upload image s3
     const originalName = 'medidor.png'
     const urlBucket = 'https://upload-shopper.s3.us-east-2.amazonaws.com/'
     const base64Data = image.replace(/^data:image\/png;base64,/, '')
@@ -58,8 +58,8 @@ export class UploadMeasure {
     fs.unlinkSync(originalName)
 
     const url = urlBucket + originalName
+    //
 
-    // upload image
     const hasCustomer = await this.prisma.customer.findUnique({
       where: {
         customerCode: customerId,
@@ -85,7 +85,6 @@ export class UploadMeasure {
 
     const prompt =
       'Descreva o valor no medidor e escreva somente numeros sem textos ou unidades de medidas.'
-    // Note: The only accepted mime types are some image types, image/*
 
     const imagePart = fileToGenerativePart(image, 'image/jpeg')
     const result = await this.model.generateContent([prompt, imagePart])

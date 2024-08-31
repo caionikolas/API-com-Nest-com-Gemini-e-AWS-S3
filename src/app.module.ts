@@ -5,7 +5,6 @@ import { ConfigModule } from '@nestjs/config'
 import { envSchema } from './env'
 import { ConfirmMeasure } from './controllers/confirm-measure.controller'
 import { GetMeasureList } from './controllers/get-measure-list.controller'
-import { Teste } from './controllers/testando.controller'
 import { UploadService } from './s3/upload-client'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 import { APP_GUARD } from '@nestjs/core'
@@ -23,7 +22,7 @@ import { APP_GUARD } from '@nestjs/core'
       },
     ]),
   ],
-  controllers: [UploadMeasure, ConfirmMeasure, GetMeasureList, Teste],
+  controllers: [UploadMeasure, ConfirmMeasure, GetMeasureList],
   providers: [
     PrismaService,
     UploadService,
