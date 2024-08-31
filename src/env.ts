@@ -6,6 +6,7 @@ export const envSchema = z.object({
   AWS_ACCESS_KEY_ID: z.string(),
   AWS_SECRET_ACCESS_KEY: z.string(),
   AWS_S3_REGION: z.string(),
+  AWS_BUCKET: z.string(),
   PORT: z.coerce.number().optional().default(3333),
 })
 

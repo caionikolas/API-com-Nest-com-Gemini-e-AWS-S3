@@ -25,8 +25,6 @@ export class GetMeasureList {
     // eslint-disable-next-line camelcase, prettier/prettier
     measure_type: MeasureTypeParamsSchema,
   ) {
-      console.log(measure_type)
-
       const measures = await this.prisma.measure.findMany({
         where: {
           // eslint-disable-next-line camelcase

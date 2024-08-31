@@ -14,7 +14,7 @@ export class UploadService {
   async upload(fileName: string, file: Buffer) {
     await this.s3Client.send(
       new PutObjectCommand({
-        Bucket: 'upload-shopper',
+        Bucket: this.configService.get('AWS_BUCKET'),
         Key: fileName,
         Body: file,
       }),

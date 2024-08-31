@@ -47,7 +47,7 @@ export class UploadMeasure {
       uploadMeasureSchema.parse(body)
 
     // upload image s3
-    const originalName = 'medidor.png'
+    const originalName = 'medidor2.png'
     const urlBucket = 'https://upload-shopper.s3.us-east-2.amazonaws.com/'
     const base64Data = image.replace(/^data:image\/png;base64,/, '')
     const buff = Buffer.from(base64Data, 'base64')
