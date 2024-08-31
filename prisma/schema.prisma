@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  customerCode String    @id @map("customer_code")
+  Measure      Measure[]
+
+  @@map("customers")
+}
+
+model Measure {
+  measureUuid     String  @id @default(uuid()) @map("measure_uuid")
+  measureDatetime String  @map("measure_datetime")
+  measureType     String  @map("measure_type")
+  hasConfirmed    Boolean @default(false) @map("has_confirmed")
+  imageUrl        String  @map("image_url")
+  measureValue    Int?    @map("measure_value")
+  customerId      String  @map("customer_id")
+
+  customer Customer @relation(fields: [customerId], references: [customerCode], onDelete: Cascade)
+
+  @@map("measures")
+}
